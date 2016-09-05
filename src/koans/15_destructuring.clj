@@ -22,7 +22,8 @@
   (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
      (let [[first-name last-name & aliases]
            (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")]
-       (str first-name " " last-name (apply str (map #(str " aka " %) aliases)))))
+       (str first-name " " last-name
+            (apply str (map (fn [x] (str " aka " x)) aliases)))))
 
   "You can regain the full argument if you like arguing"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
